@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { Sparkles, Zap, Users } from "lucide-react";
+import { Sparkles, Zap, Users, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeroProps {
   onStartNow: () => void;
@@ -13,6 +14,16 @@ const Hero = ({ onStartNow }: HeroProps) => {
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 blur-3xl"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24">
+        {/* Navigation */}
+        <div className="absolute top-8 right-8">
+          <Link to="/portfolio">
+            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
+              <User className="w-4 h-4 mr-2" />
+              Portfolio
+            </Button>
+          </Link>
+        </div>
+
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-white/20">
